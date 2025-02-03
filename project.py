@@ -9,7 +9,7 @@ LOGO_CLASSIFIER_WEIGHTS = 'logo_classifier.pth'  # Путь к весам кла
 CONFIDENCE_THRESHOLD = 0.5  # Порог уверенности для детекции
 CLASSIFICATION_THRESHOLD = 0.9  # Порог уверенности для классификации
 
-# Загрузка модели YOLOv5
+# Загрузка модели YOLO
 model_yolo = torch.hub.load("ultralytics/yolov5", "yolov5s")  # Используем YOLOv5 как пример
 
 # Загрузка модели классификации логотипов
@@ -48,7 +48,7 @@ def process_image(image_path):
         print("Ошибка загрузки изображения.")
         return
 
-    # Детекция логотипов с использованием YOLOv9
+    # Детекция логотипов с использованием YOLO
     results = model_yolo(image)
     detections = results.xyxy[0].numpy()  # Получение результатов детекции
 
