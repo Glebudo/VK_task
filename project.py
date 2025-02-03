@@ -5,12 +5,11 @@ from torchvision import transforms
 from PIL import Image
 
 # Конфигурации
-YOLOv9_WEIGHTS = 'yolov9s.pt'  # Путь к весам YOLOv9
 LOGO_CLASSIFIER_WEIGHTS = 'logo_classifier.pth'  # Путь к весам классификатора
 CONFIDENCE_THRESHOLD = 0.5  # Порог уверенности для детекции
 CLASSIFICATION_THRESHOLD = 0.9  # Порог уверенности для классификации
 
-# Загрузка модели YOLOv9
+# Загрузка модели YOLOv5
 model_yolo = torch.hub.load("ultralytics/yolov5", "yolov5s")  # Используем YOLOv5 как пример
 
 # Загрузка модели классификации логотипов
